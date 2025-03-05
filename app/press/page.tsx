@@ -44,15 +44,15 @@ export default function Press() {
       <h1 className="quirky-title">Press</h1>
       <div className="space-y-4">
         {pressItems.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white/80 p-4 rounded-lg hover:bg-pink-200 transition-colors transform hover:scale-105 hover:rotate-1 border-4 border-dashed border-purple-400"
-          >
-            <Link href={item.url} target="_blank" rel="noopener noreferrer" className="block">
+          <Link href={item.url} target="_blank" rel="noopener noreferrer" className="block">
+            <div
+              key={index}
+              className="bg-white/80 p-4 rounded-lg hover:bg-pink-200 transition-colors transform hover:scale-105 hover:rotate-1 border-4 border-dashed border-purple-400"
+            >
               <span className="font-bold text-pink-600">{item.year}</span> -{" "}
               <span className="text-purple-800">{item.title}</span>
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
