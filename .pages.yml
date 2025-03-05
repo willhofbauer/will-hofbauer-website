@@ -6,8 +6,8 @@ media:
 content:
   - name: press
     label: Press
-    type: file
-    path: app/press/press.json
+    type: collection
+    path: app/press/content
     format: json
     icon: newspaper
     fields:
@@ -36,8 +36,8 @@ content:
 
   - name: releases
     label: Music Releases
-    type: file
-    path: app/work/releases.json
+    type: collection
+    path: app/work/content/releases
     format: json
     icon: music
     fields:
@@ -74,8 +74,8 @@ content:
 
   - name: labels
     label: Labels
-    type: file
-    path: app/work/labels.json
+    type: collection
+    path: app/work/content/labels
     format: json
     icon: tag
     fields:
