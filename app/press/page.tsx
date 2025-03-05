@@ -1,7 +1,12 @@
+import { getPressItems } from './data'
 import Link from "next/link"
-import pressItems from "./press.json"
 
-export default function Press() {
+// This makes the page static by default
+export const dynamic = 'force-static'
+
+export default function PressPage() {
+  const pressItems = getPressItems()
+
   return (
     <div className="space-y-8">
       <h1 className="quirky-title">Press</h1>
@@ -20,4 +25,3 @@ export default function Press() {
     </div>
   )
 }
-
