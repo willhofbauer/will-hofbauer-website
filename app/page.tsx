@@ -3,7 +3,6 @@ import Image from "next/image"
 
 // Home page component
 export default function Home() {
-  console.log("Rendering Home page")
   return (
     <div className="flex flex-col items-center justify-center space-y-6 mb-2">
       <h1 className="quirky-title wiggle">Will Hofbauer</h1>
