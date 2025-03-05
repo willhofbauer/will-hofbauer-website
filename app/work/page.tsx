@@ -1,75 +1,11 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import SoundCloudEmbed from "../components/SoundCloudEmbed"
-
-const releases = [
-  {
-    title: "Pond Party",
-    year: 2024,
-    label: "Third Place",
-    url: "https://thirdplacerecords.bandcamp.com/album/will-hofbauer-pond-party",
-    artworkUrl: "https://f4.bcbits.com/img/a3820815548_10.jpg",
-  },
-  {
-    title: "Dingers",
-    year: 2024,
-    label: "Optimo Music",
-    url: "https://optimomusic.bandcamp.com/album/dingers",
-    artworkUrl: "https://f4.bcbits.com/img/a1253488339_10.jpg",
-  },
-  {
-    title: "Four! Beats!",
-    year: 2024,
-    label: "Aus Music",
-    url: "https://willhofbauer.bandcamp.com/album/four-beats",
-    artworkUrl: "https://f4.bcbits.com/img/a0821494841_10.jpg",
-
-  },
-  {
-    title: "The Shovel Is A Shovel Was A Shovel",
-    year: 2023,
-    label: "Wisdom Teeth",
-    url: "https://willhofbauer.bandcamp.com/album/the-shovel-is-a-shovel-was-a-shovel",
-    artworkUrl: "https://f4.bcbits.com/img/a0401658093_10.jpg",
-  },
-  {
-    title: "Drip Dip Drip The Dip Drip",
-    year: 2022,
-    label: "Rinse",
-    url: "https://willhofbauer.bandcamp.com/album/will-hofbauer-drip-dip-drip-the-dip-drip",
-    artworkUrl: "https://f4.bcbits.com/img/a0038515437_10.jpg",
-  },
-  {
-    title: "Steppe EP (w/ Sangre Voss)",
-    year: 2021,
-    label: "Control Freak",
-    url: "https://controlfreakrecordings.bandcamp.com/album/steppe-ep-inc-ciel-remix",
-    artworkUrl: "https://f4.bcbits.com/img/a3490672157_10.jpg",
-  },
-  {
-    title: "Where Did All The Hay Go?",
-    year: 2020,
-    label: "Third Place",
-    url: "https://thirdplacerecords.bandcamp.com/album/will-hofbauer-where-did-all-the-hay-go",
-    artworkUrl: "https://f4.bcbits.com/img/a2975384738_10.jpg",
-  },
-]
-
-const labels = [
-  {
-    name: "whirm",
-    url: "https://whirm.online",
-    soundcloudUrl: "https://soundcloud.com/willhofbauer/sets/whirm",
-  },
-  {
-    name: "Third Place",
-    url: "https://thirdplacerecords.com",
-    soundcloudUrl: "https://soundcloud.com/willhofbauer/sets/label-third-place",
-  },
-]
+import releases from "@/content/releases.json"
+import labels from "@/content/labels.json"
 
 export default function Work() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)

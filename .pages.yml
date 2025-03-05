@@ -1,0 +1,103 @@
+media:
+  input: public/images
+  output: /images
+  extensions: [jpg, jpeg, png, gif, svg]
+
+content:
+  - name: press
+    label: Press
+    type: collection
+    path: content
+    icon: newspaper
+    fields:
+      - name: year
+        label: Year
+        type: number
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: url
+        label: URL
+        type: string
+        required: true
+        pattern:
+          regex: '^https?:\/\/.+$'
+          message: 'Must be a valid URL starting with http:// or https://'
+    view:
+      fields: [year, title]
+      primary: title
+      sort: [year, title]
+      default:
+        sort: year
+        order: desc
+
+  - name: releases
+    label: Music Releases
+    type: collection
+    path: content
+    icon: music
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: year
+        label: Year
+        type: number
+        required: true
+      - name: label
+        label: Label
+        type: string
+        required: true
+      - name: url
+        label: URL
+        type: string
+        required: true
+        pattern:
+          regex: '^https?:\/\/.+$'
+          message: 'Must be a valid URL starting with http:// or https://'
+      - name: artworkUrl
+        label: Artwork
+        type: image
+        required: true
+    view:
+      fields: [title, year, label]
+      primary: title
+      sort: [year, title]
+      default:
+        sort: year
+        order: desc
+
+  - name: labels
+    label: Labels
+    type: collection
+    path: content
+    icon: tag
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: url
+        label: Website URL
+        type: string
+        required: true
+        pattern:
+          regex: '^https?:\/\/.+$'
+          message: 'Must be a valid URL starting with http:// or https://'
+      - name: soundcloudUrl
+        label: SoundCloud Playlist URL
+        type: string
+        required: true
+        pattern:
+          regex: '^https?:\/\/soundcloud\.com\/.+$'
+          message: 'Must be a valid SoundCloud URL'
+    view:
+      fields: [name]
+      primary: name
+      sort: [name]
+      default:
+        sort: name
+        order: asc
