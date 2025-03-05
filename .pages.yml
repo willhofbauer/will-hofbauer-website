@@ -7,7 +7,7 @@ content:
   - name: press
     label: Press
     type: collection
-    path: content/press.json
+    path: app/press/press.json
     format: json
     icon: newspaper
     fields:
@@ -37,7 +37,7 @@ content:
   - name: releases
     label: Music Releases
     type: collection
-    path: content/releases.json
+    path: app/work/releases.json
     format: json
     icon: music
     fields:
@@ -75,7 +75,7 @@ content:
   - name: labels
     label: Labels
     type: collection
-    path: content/labels.json
+    path: app/work/labels.json
     format: json
     icon: tag
     fields:

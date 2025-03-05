@@ -1,5 +1,5 @@
 import Link from "next/link"
-import pressItems from "@/content/press.json"
+import pressItems from "./press.json"
 
 export default function Press() {
   return (
