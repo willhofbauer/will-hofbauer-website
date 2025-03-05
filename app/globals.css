@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-yellow-100 text-purple-800;
+  font-family: "Krungthep", "Marker Felt", "Arial Rounded MT Bold", "Helvetica Rounded", "Arial", sans-serif;
+}
+
+/* Mobile-specific font */
+@media (max-width: 768px) {
+  body {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", "Arial", sans-serif;
+  }
+}
+
+.nav-link {
+  @apply px-3 py-2 bg-pink-300 text-purple-800 rounded-lg 
+         transition-all duration-300 transform hover:scale-110
+         border-2 border-purple-400 font-bold text-sm
+         whitespace-nowrap block text-center;
+}
+
+.nav-link:hover {
+  @apply bg-purple-400 text-white;
+}
+
+.nav-link.active {
+  @apply bg-purple-400 text-white;
+}
+
+.content-card {
+  @apply bg-white/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 
+         border-2 sm:border-4 border-dashed border-purple-400
+         shadow-lg;
+}
+
+.quirky-title {
+  @apply text-2xl sm:text-3xl font-bold mb-3 sm:mb-6 text-center text-purple-800
+         transform -rotate-2 inline-block
+         border-b-4 border-pink-400 pb-2;
+}
+
+.wiggle {
+  animation: wiggle 10s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.home-wobble:hover {
+  animation: homeWobble 0.5s ease-in-out;
+}
+
+@keyframes homeWobble {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(5px) rotate(5deg);
+  }
+}
+
+.press-wobble:hover {
+  animation: pressWobble 0.5s ease-in-out;
+}
+
+@keyframes pressWobble {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(-5deg);
+  }
+}
+
+.subtle-bounce {
+  animation: subtleBounce 2s ease-in-out infinite;
+}
+
+@keyframes subtleBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.gentle-pulse {
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Wiggle hover effect for social icons */
+.wiggle-hover:hover {
+  animation: wiggleHover 0.5s ease-in-out;
+}
+
+@keyframes wiggleHover {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+.test-font-1 {
+  font-family: "Ink Free", cursive;
+}
+
+.test-font-2 {
+  font-family: "Bradley Hand", cursive;
+}
+
+.test-font-3 {
+  font-family: "Segoe Print", cursive;
+}
+
+.test-font-krungthep {
+  font-family: "Krungthep", cursive;
+}
+
+/* New styles for social icons */
+.social-icon {
+  --icon-color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+  color: var(--icon-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  --icon-color: #ec4899;
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
+  .quirky-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .content-card {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+.content-container {
+  @apply w-full max-w-2xl mx-auto;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Add these new styles for bobbing animations */
+@keyframes bob-1 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes bob-2 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes bob-3 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes bob-4 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.bob-1 {
+  animation: bob-1 3s ease-in-out infinite;
+}
+.bob-2 {
+  animation: bob-2 4s ease-in-out infinite;
+}
+.bob-3 {
+  animation: bob-3 3.5s ease-in-out infinite;
+}
+.bob-4 {
+  animation: bob-4 4.5s ease-in-out infinite;
+}
+
+/* Add this new style for the release items */
+.release-item {
+  @apply transform transition-all duration-300 hover:scale-105 hover:-rotate-2 hover:shadow-lg;
+}
+
+/* Add these styles to ensure proper spacing for the fixed navigation on mobile */
+@media (max-width: 768px) {
+  body {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    font-size: 14px;
+  }
+
+  .quirky-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav-link {
+    transform: none !important;
+    flex: 1;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .content-card {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .home-wobble:hover,
+  .press-wobble:hover,
+  .subtle-bounce,
+  .gentle-pulse {
+    animation: none;
+  }
+
+  nav,
+  footer {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0.5rem 0.25rem;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: rgba(254, 243, 199, 0.9);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+  }
+
+  nav {
+    top: 0;
+  }
+  footer {
+    bottom: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    background-color: transparent;
+  }
+
+  footer {
+    position: static;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Update these styles for better font consistency */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
