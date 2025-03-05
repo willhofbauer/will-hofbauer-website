@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server"
-import cheerio from "cheerio"
+import * as cheerio from "cheerio"
+
+export const runtime = 'edge';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)

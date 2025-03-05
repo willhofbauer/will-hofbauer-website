@@ -2,6 +2,8 @@ import { NextResponse } from "next/server"
 import axios from "axios"
 import * as cheerio from "cheerio"
 
+export const runtime = 'edge';
+
 const MAX_RETRIES = 3
 const RETRY_DELAY = 2000 // 2 seconds
 

@@ -2,6 +2,8 @@ import { NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
 
+export const runtime = 'edge';
+
 const SUBSCRIBERS_FILE = path.join(process.cwd(), "data", "subscribers.json")
 
 export async function POST(req: Request) {
