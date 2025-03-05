@@ -8,6 +8,7 @@ content:
     label: Press
     type: collection
     path: content/press.json
+    format: json
     icon: newspaper
     fields:
       - name: year
@@ -37,6 +38,7 @@ content:
     label: Music Releases
     type: collection
     path: content/releases.json
+    format: json
     icon: music
     fields:
       - name: title
@@ -74,6 +76,7 @@ content:
     label: Labels
     type: collection
     path: content/labels.json
+    format: json
     icon: tag
     fields:
       - name: name
