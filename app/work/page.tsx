@@ -11,42 +11,50 @@ const releases = [
     year: 2024,
     label: "Third Place",
     url: "https://thirdplacerecords.bandcamp.com/album/will-hofbauer-pond-party",
+    artworkUrl: "https://f4.bcbits.com/img/a3820815548_10.jpg",
   },
   {
     title: "Dingers",
     year: 2024,
     label: "Optimo Music",
     url: "https://optimomusic.bandcamp.com/album/dingers",
+    artworkUrl: "https://f4.bcbits.com/img/a1253488339_10.jpg",
   },
   {
     title: "Four! Beats!",
     year: 2024,
     label: "Aus Music",
     url: "https://willhofbauer.bandcamp.com/album/four-beats",
+    artworkUrl: "https://f4.bcbits.com/img/a0821494841_10.jpg",
+
   },
   {
     title: "The Shovel Is A Shovel Was A Shovel",
     year: 2023,
     label: "Wisdom Teeth",
     url: "https://willhofbauer.bandcamp.com/album/the-shovel-is-a-shovel-was-a-shovel",
+    artworkUrl: "https://f4.bcbits.com/img/a0401658093_10.jpg",
   },
   {
     title: "Drip Dip Drip The Dip Drip",
     year: 2022,
     label: "Rinse",
     url: "https://willhofbauer.bandcamp.com/album/will-hofbauer-drip-dip-drip-the-dip-drip",
+    artworkUrl: "https://f4.bcbits.com/img/a0038515437_10.jpg",
   },
   {
     title: "Steppe EP (w/ Sangre Voss)",
     year: 2021,
     label: "Control Freak",
     url: "https://controlfreakrecordings.bandcamp.com/album/steppe-ep-inc-ciel-remix",
+    artworkUrl: "https://f4.bcbits.com/img/a3490672157_10.jpg",
   },
   {
     title: "Where Did All The Hay Go?",
     year: 2020,
     label: "Third Place",
     url: "https://thirdplacerecords.bandcamp.com/album/will-hofbauer-where-did-all-the-hay-go",
+    artworkUrl: "https://f4.bcbits.com/img/a2975384738_10.jpg",
   },
 ]
 
@@ -63,50 +71,8 @@ const labels = [
   },
 ]
 
-async function getArtworkUrl(url: string) {
-  try {
-    const response = await fetch(`/api/get-artwork?url=${encodeURIComponent(url)}`)
-    const data = await response.json()
-    if (response.ok) {
-      return data.imageUrl
-    } else {
-      console.warn(`Failed to fetch artwork for ${url}: ${data.error}`)
-      return null
-    }
-  } catch (error) {
-    console.error("Error fetching artwork:", error)
-    return null
-  }
-}
-
 export default function Work() {
-  const [releasesWithArtwork, setReleasesWithArtwork] = useState(releases)
-  const [isLoading, setIsLoading] = useState(true)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const fetchArtwork = async () => {
-      setIsLoading(true)
-      try {
-        const updatedReleases = await Promise.all(
-          releases.map(async (release) => {
-            const imageUrl = await getArtworkUrl(release.url)
-            return {
-              ...release,
-              imageUrl: imageUrl || `/album-covers/${release.title.toLowerCase().replace(/ /g, "-")}.jpg`,
-            }
-          }),
-        )
-        setReleasesWithArtwork(updatedReleases)
-      } catch (error) {
-        console.error("Error fetching artwork:", error)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    fetchArtwork()
-  }, [])
 
   const handleScroll = (direction: "left" | "right") => {
     const container = scrollContainerRef.current
@@ -136,7 +102,7 @@ export default function Work() {
             className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide"
             style={{ scrollBehavior: "smooth" }}
           >
-            {releasesWithArtwork.map((release, index) => (
+            {releases.map((release, index) => (
               <Link
                 key={index}
                 href={release.url}
@@ -146,17 +112,13 @@ export default function Work() {
               >
                 <div className="relative group">
                   <div className="aspect-square relative overflow-hidden rounded-lg shadow-md border-2 sm:border-4 border-pink-400">
-                    {isLoading ? (
-                      <div className="w-full h-full bg-gray-200 animate-pulse"></div>
-                    ) : (
-                      <Image
-                        src={release.imageUrl || "/album-covers/placeholder.jpg"}
-                        alt={release.title}
-                        width={160}
-                        height={160}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
+                    <Image
+                      src={release.artworkUrl || "/placeholder.svg"}
+                      alt={release.title}
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="mt-1 sm:mt-2 text-xs">
                     <p className="font-bold text-purple-800">{release.title}</p>
