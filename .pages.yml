@@ -63,9 +63,12 @@ content:
           regex: '^https?:\/\/.+$'
           message: 'Must be a valid URL starting with http:// or https://'
       - name: artworkUrl
-        label: Artwork
-        type: image
+        label: Artwork URL
+        type: string
         required: true
+        pattern:
+          regex: '^https?:\/\/.+$'
+          message: 'Must be a valid URL starting with http:// or https://'
     view:
       fields: [title, year, label]
       primary: title
