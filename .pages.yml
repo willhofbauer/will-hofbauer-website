@@ -9,7 +9,7 @@ content:
     type: collection
     path: app/press/content
     format: json
-    filename: {fields.title}.json
+    filename: '{fields.title}.json'
     icon: newspaper
     fields:
       - name: year
@@ -40,7 +40,7 @@ content:
     type: collection
     path: app/work/content/releases
     format: json
-    filename: {fields.title}.json
+    filename: '{fields.title}.json'
     icon: music
     fields:
       - name: title
@@ -78,7 +78,7 @@ content:
     label: Labels
     type: collection
     path: app/work/content/labels
-    filename: {fields.name}.json
+    filename: '{fields.name}.json'
     format: json
     icon: tag
     fields:
