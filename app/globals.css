@@ -212,7 +212,7 @@ body {
 }
 
 .content-container {
-  @apply w-full max-w-2xl mx-auto;
+  @apply w-full mx-auto;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
