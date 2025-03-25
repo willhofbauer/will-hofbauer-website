@@ -38,7 +38,7 @@ content:
   - name: work
     label: Work
     type: collection
-    path: app/work/content
+    path: app/work/content/work
     format: json
     filename: '{fields.title}.json'
     icon: music
