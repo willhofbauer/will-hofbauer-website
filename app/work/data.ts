@@ -57,7 +57,7 @@ export function getWorkItems(): WorkItem[] {
     const contentDir = path.join(process.cwd(), 'app/work/content/work')
     const fileNames = fs.readdirSync(contentDir)
 
-    const workItems = fileNames.map(fileName => {
+    const workItems = fileNames.filter(fileName => fileName !== '.gitkeep').map(fileName => {
         const filePath = path.join(contentDir, fileName)
         const fileContent = fs.readFileSync(filePath, 'utf8')
         return JSON.parse(fileContent) as WorkItem
