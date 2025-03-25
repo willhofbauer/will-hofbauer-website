@@ -34,6 +34,37 @@ content:
       default:
         sort: year
         order: desc
+  
+ - name: work
+    label: Work
+    type: collection
+    path: app/work/content
+    format: json
+    filename: '{fields.title}.json'
+    icon: music
+    fields:
+      - name: year
+        label: Year
+        type: number
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: url
+        label: URL
+        type: string
+        required: true
+        pattern:
+          regex: '^https?:\/\/.+$'
+          message: 'Must be a valid URL starting with http:// or https://'
+    view:
+      fields: [year, title]
+      primary: title
+      sort: [year, title]
+      default:
+        sort: year
+        order: desc
 
   - name: releases
     label: Music Releases

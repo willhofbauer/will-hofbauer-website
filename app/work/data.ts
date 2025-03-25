@@ -16,6 +16,12 @@ export interface Label {
     soundcloudUrl: string
 }
 
+export interface WorkItem {
+    year: number
+    title: string
+    url: string
+}
+
 // Function to get all releases from the content directory
 export function getReleases(): Release[] {
     const contentDir = path.join(process.cwd(), 'app/work/content/releases')
@@ -45,4 +51,17 @@ export function getLabels(): Label[] {
     })
 
     return labels
-} 
+}
+
+export function getWorkItems(): WorkItem[] {
+    const contentDir = path.join(process.cwd(), 'app/work/content/work')
+    const fileNames = fs.readdirSync(contentDir)
+
+    const workItems = fileNames.map(fileName => {
+        const filePath = path.join(contentDir, fileName)
+        const fileContent = fs.readFileSync(filePath, 'utf8')
+        return JSON.parse(fileContent) as WorkItem
+    })
+
+    return workItems
+}
