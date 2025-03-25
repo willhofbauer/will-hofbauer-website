@@ -35,7 +35,7 @@ content:
         sort: year
         order: desc
   
- - name: work
+  - name: work
     label: Work
     type: collection
     path: app/work/content
