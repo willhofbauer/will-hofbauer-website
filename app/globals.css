@@ -2,23 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Krungthep";
+  src: url("https://db.onlinewebfonts.com/t/736cf5b08b01082a3645e14038868e20.eot");
+  src: url("https://db.onlinewebfonts.com/t/736cf5b08b01082a3645e14038868e20.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/736cf5b08b01082a3645e14038868e20.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/736cf5b08b01082a3645e14038868e20.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/736cf5b08b01082a3645e14038868e20.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/736cf5b08b01082a3645e14038868e20.svg#Krungthep")format("svg");
+}
+
 body {
   @apply bg-yellow-100 text-purple-800;
   font-family: "Krungthep", "Marker Felt", "Arial Rounded MT Bold", "Helvetica Rounded", "Arial", sans-serif;
 }
 
-/* Mobile-specific font */
-@media (max-width: 768px) {
-  body {
-    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", "Arial", sans-serif;
-  }
-}
-
 .nav-link {
-  @apply px-3 py-2 bg-pink-300 text-purple-800 rounded-lg 
-         transition-all duration-300 transform hover:scale-110
-         border-2 border-purple-400 font-bold text-sm
-         whitespace-nowrap block text-center;
+  @apply px-3 py-2 bg-pink-300 text-purple-800 rounded-lg transition-all duration-300 transform hover:scale-110 border-2 border-purple-400 font-bold text-sm whitespace-nowrap block text-center;
 }
 
 .nav-link:hover {
@@ -30,15 +30,11 @@ body {
 }
 
 .content-card {
-  @apply bg-white/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 
-         border-2 sm:border-4 border-dashed border-purple-400
-         shadow-lg;
+  @apply bg-white/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 border-2 sm:border-4 border-dashed border-purple-400 shadow-lg;
 }
 
 .quirky-title {
-  @apply text-2xl sm:text-3xl font-bold mb-3 sm:mb-6 text-center text-purple-800
-         transform -rotate-2 inline-block
-         border-b-4 border-pink-400 pb-2;
+  @apply text-2xl sm:text-3xl font-bold mb-3 sm:mb-6 text-center text-purple-800 transform -rotate-2 inline-block border-b-4 border-pink-400 pb-2;
 }
 
 .wiggle {
@@ -46,10 +42,12 @@ body {
 }
 
 @keyframes wiggle {
+
   0%,
   100% {
     transform: rotate(-1deg);
   }
+
   50% {
     transform: rotate(1deg);
   }
@@ -60,10 +58,12 @@ body {
 }
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -74,13 +74,16 @@ body {
 }
 
 @keyframes homeWobble {
+
   0%,
   100% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-5px) rotate(-5deg);
   }
+
   75% {
     transform: translateX(5px) rotate(5deg);
   }
@@ -91,13 +94,16 @@ body {
 }
 
 @keyframes pressWobble {
+
   0%,
   100% {
     transform: translateY(0) rotate(0);
   }
+
   25% {
     transform: translateY(-5px) rotate(5deg);
   }
+
   75% {
     transform: translateY(5px) rotate(-5deg);
   }
@@ -108,10 +114,12 @@ body {
 }
 
 @keyframes subtleBounce {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
@@ -122,10 +130,12 @@ body {
 }
 
 @keyframes gentlePulse {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
@@ -137,13 +147,16 @@ body {
 }
 
 @keyframes wiggleHover {
+
   0%,
   100% {
     transform: rotate(0);
   }
+
   25% {
     transform: rotate(-10deg);
   }
+
   75% {
     transform: rotate(10deg);
   }
@@ -159,10 +172,6 @@ body {
 
 .test-font-3 {
   font-family: "Segoe Print", cursive;
-}
-
-.test-font-krungthep {
-  font-family: "Krungthep", cursive;
 }
 
 /* New styles for social icons */
@@ -221,40 +230,48 @@ body {
 
 /* Add these new styles for bobbing animations */
 @keyframes bob-1 {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
 }
 
 @keyframes bob-2 {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-7px);
   }
 }
 
 @keyframes bob-3 {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-3px);
   }
 }
 
 @keyframes bob-4 {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-6px);
   }
@@ -263,12 +280,15 @@ body {
 .bob-1 {
   animation: bob-1 3s ease-in-out infinite;
 }
+
 .bob-2 {
   animation: bob-2 4s ease-in-out infinite;
 }
+
 .bob-3 {
   animation: bob-3 3.5s ease-in-out infinite;
 }
+
 .bob-4 {
   animation: bob-4 4.5s ease-in-out infinite;
 }
@@ -330,6 +350,7 @@ body {
   nav {
     top: 0;
   }
+
   footer {
     bottom: 0;
   }
@@ -376,4 +397,3 @@ h5,
 h6 {
   font-weight: 700;
 }
-
