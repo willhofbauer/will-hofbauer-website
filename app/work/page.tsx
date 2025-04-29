@@ -38,12 +38,12 @@ export default function WorkPage() {
     DJ Mixes
   </h2>
 
-  {/* Centered YouTube Embed with margin-bottom */}
+  {/* Centered YouTube Playlist Embed with margin-bottom */}
   <div className="flex justify-center mb-6">
     <iframe
       width="560"
       height="315"
-      src="https://www.youtube.com/embed/6JKLhn13sKY?si=0f6oSZJljAH_SUFf"
+      src="https://www.youtube.com/embed/videoseries?si=NnR0kB-jF3e_3WEn&amp;list=PLQjD57Kt9O2f8K80kflYsFPN5IhdbQU-j"
       title="YouTube video player"
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -51,6 +51,12 @@ export default function WorkPage() {
       allowFullScreen
     ></iframe>
   </div>
+
+  <div className="aspect-w-16 aspect-h-9 border-2 sm:border-4 border-purple-400 rounded-lg overflow-hidden">
+    <SoundCloudEmbed playlistUrl="https://soundcloud.com/willhofbauer/sets/mixes-1" />
+  </div>
+</section>
+
 
   <div className="aspect-w-16 aspect-h-9 border-2 sm:border-4 border-purple-400 rounded-lg overflow-hidden">
     <SoundCloudEmbed playlistUrl="https://soundcloud.com/willhofbauer/sets/mixes-1" />
