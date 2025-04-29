@@ -33,7 +33,30 @@ export default function WorkPage() {
           DJ Mixes
         </h2>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/6JKLhn13sKY?si=0f6oSZJljAH_SUFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <section>
+  <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-center text-purple-800 transform rotate-2">
+    DJ Mixes
+  </h2>
+
+  {/* Centered YouTube Embed with margin-bottom */}
+  <div className="flex justify-center mb-6">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/6JKLhn13sKY?si=0f6oSZJljAH_SUFf"
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    ></iframe>
+  </div>
+
+  <div className="aspect-w-16 aspect-h-9 border-2 sm:border-4 border-purple-400 rounded-lg overflow-hidden">
+    <SoundCloudEmbed playlistUrl="https://soundcloud.com/willhofbauer/sets/mixes-1" />
+  </div>
+</section>
+
         
         <div className="aspect-w-16 aspect-h-9 border-2 sm:border-4 border-purple-400 rounded-lg overflow-hidden">
           <SoundCloudEmbed playlistUrl="https://soundcloud.com/willhofbauer/sets/mixes-1" />
