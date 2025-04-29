@@ -33,10 +33,6 @@ export default function WorkPage() {
           DJ Mixes
         </h2>
 
-      <section>
-  <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-center text-purple-800 transform rotate-2">
-    DJ Mixes
-  </h2>
 
   {/* Centered YouTube Playlist Embed with margin-bottom */}
   <div className="flex justify-center mb-6">
@@ -51,7 +47,6 @@ export default function WorkPage() {
       allowFullScreen
     ></iframe>
   </div>
-
 
         
         <div className="aspect-w-16 aspect-h-9 border-2 sm:border-4 border-purple-400 rounded-lg overflow-hidden">
