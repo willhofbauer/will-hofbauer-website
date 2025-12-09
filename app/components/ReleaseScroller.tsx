@@ -55,7 +55,7 @@ export default function ReleaseScroller({ releases }: ReleaseScrollerProps) {
                             <div className="mt-1 sm:mt-2 text-xs">
                                 <p className="font-bold text-purple-800">{release.title}</p>
                                 <p className="text-pink-600">
-                                    {release.year}
+                                    {new Date(release.date).getFullYear()}
                                 </p>
                             </div>
                         </div>

@@ -4,7 +4,7 @@ import path from 'path'
 // Define interfaces for our data
 export interface Release {
     title: string
-    year: number
+    date: string
     label: string
     url: string
     artworkUrl: string
@@ -34,8 +34,12 @@ export function getReleases(): Release[] {
         return JSON.parse(fileContent) as Release
     })
 
-    // Sort by year (descending) and then by filename (which includes the original order)
-    return releases.sort((a, b) => b.year - a.year)
+    // Sort by date (descending)
+    return releases.sort((a, b) => {
+        const dateA = new Date(a.date).getTime()
+        const dateB = new Date(b.date).getTime()
+        return dateB - dateA
+    })
 }
 
 // Function to get all labels from the content directory
