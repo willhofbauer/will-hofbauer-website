@@ -80,11 +80,8 @@ content:
         required: true
       - name: date
         label: Release Date
-        type: string
+        type: date
         required: true
-        pattern:
-          regex: '^\d{4}-\d{2}-\d{2}$'
-          message: 'Must be a valid date in YYYY-MM-DD format'
       - name: label
         label: Label
         type: string
