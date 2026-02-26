@@ -4,6 +4,38 @@ media:
   extensions: [jpg, jpeg, png, gif, svg]
 
 content:
+  - name: home
+    label: Home
+    type: file
+    path: app/content/home.json
+    format: json
+    icon: home
+    fields:
+      - name: bio
+        label: Bio
+        type: rich-text
+
+  - name: contact
+    label: Contact
+    type: file
+    path: app/content/contact.json
+    format: json
+    icon: mail
+    fields:
+      - name: contacts
+        label: Contacts
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: true
+          - name: email
+            label: Email
+            type: string
+            required: true
+
   - name: press
     label: Press
     type: collection

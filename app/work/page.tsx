@@ -14,7 +14,7 @@ export default function WorkPage() {
     <div className="space-y-6 sm:space-y-12 mb-2">
       <h1 className="quirky-title !mb-0">Work</h1>
 
-      <section>
+      <section className="space-y-4">
         {workItems.map((item, index) => (
           <ExternalLink key={index} href={item.url} year={item.year} title={item.title} />
         ))}

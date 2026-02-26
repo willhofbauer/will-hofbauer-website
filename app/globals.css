@@ -215,6 +215,22 @@ body {
   @apply w-full mx-auto;
 }
 
+.bio-content p {
+  @apply mb-4;
+}
+
+.bio-content p:last-child {
+  @apply mb-0;
+}
+
+.bio-content a {
+  @apply underline font-bold;
+}
+
+.bio-content a:hover {
+  color: #ec4899;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

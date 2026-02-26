@@ -24,10 +24,12 @@ export default function ReleaseScroller({ releases }: ReleaseScrollerProps) {
         <div className="relative">
             <button
                 onClick={() => handleScroll("left")}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-pink-300/80 text-purple-800 rounded-full p-2 hover:bg-pink-400/80 transition-colors"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-pink-300/80 text-purple-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-400/80 transition-colors"
                 aria-label="Scroll left"
             >
-                ←
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
             </button>
             <div
                 ref={scrollContainerRef}
@@ -64,10 +66,12 @@ export default function ReleaseScroller({ releases }: ReleaseScrollerProps) {
             </div>
             <button
                 onClick={() => handleScroll("right")}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-pink-300/80 text-purple-800 rounded-full p-2 hover:bg-pink-400/80 transition-colors"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-pink-300/80 text-purple-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-400/80 transition-colors"
                 aria-label="Scroll right"
             >
-                →
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
             </button>
         </div>
     )
