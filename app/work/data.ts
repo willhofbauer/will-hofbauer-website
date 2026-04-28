@@ -67,5 +67,5 @@ export function getWorkItems(): WorkItem[] {
         return JSON.parse(fileContent) as WorkItem
     })
 
-    return workItems
+    return workItems.sort((a, b) => b.year - a.year)
 }
