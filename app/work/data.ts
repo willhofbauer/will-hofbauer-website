@@ -17,7 +17,7 @@ export interface Label {
 }
 
 export interface WorkItem {
-    year: number
+    date: string
     title: string
     url: string
 }
@@ -67,5 +67,5 @@ export function getWorkItems(): WorkItem[] {
         return JSON.parse(fileContent) as WorkItem
     })
 
-    return workItems.sort((a, b) => b.year - a.year)
+    return workItems.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }

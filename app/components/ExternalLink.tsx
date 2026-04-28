@@ -3,11 +3,12 @@ import { FC } from "react";
 
 interface ExternalLinkProps {
     href: string
-    year: number
+    date: string
     title: string
 }
 
-export const ExternalLink: FC<ExternalLinkProps> = ({ href, year, title }) => {
+export const ExternalLink: FC<ExternalLinkProps> = ({ href, date, title }) => {
+    const year = new Date(date).getFullYear()
     return <Link href={href} target="_blank" rel="noopener noreferrer" className="block">
         <div
             className="bg-white/80 p-4 rounded-lg hover:bg-pink-200 transition-colors transform hover:scale-105 hover:rotate-1 border-4 border-dashed border-purple-400"

@@ -16,7 +16,7 @@ export default function WorkPage() {
 
       <section className="space-y-4">
         {workItems.map((item, index) => (
-          <ExternalLink key={index} href={item.url} year={item.year} title={item.title} />
+          <ExternalLink key={index} href={item.url} date={item.date} title={item.title} />
         ))}
       </section>
 

@@ -75,9 +75,9 @@ content:
     filename: '{fields.title}.json'
     icon: music
     fields:
-      - name: year
-        label: Year
-        type: number
+      - name: date
+        label: Date
+        type: date
         required: true
       - name: title
         label: Title
@@ -91,11 +91,11 @@ content:
           regex: '^https?:\/\/.+$'
           message: 'Must be a valid URL starting with http:// or https://'
     view:
-      fields: [year, title]
+      fields: [date, title]
       primary: title
-      sort: [year, title]
+      sort: [date, title]
       default:
-        sort: year
+        sort: date
         order: desc
 
   - name: releases
