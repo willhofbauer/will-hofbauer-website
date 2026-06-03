@@ -1,6 +1,12 @@
 {
   "contacts": [
-    { "label": "General", "email": "will@thirdplacerecords.com" },
-    { "label": "DJ Bookings", "email": "george@leftbank.agency" }
+    {
+      "label": "General",
+      "email": "hello@willhofbauer.com"
+    },
+    {
+      "label": "DJ Bookings",
+      "email": "george@leftbank.agency"
+    }
   ]
 }
