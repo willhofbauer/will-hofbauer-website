@@ -9,6 +9,24 @@ function getHomeContent() {
   return JSON.parse(raw) as { bio: string }
 }
 
+// The CMS stores the bio as Markdown, so turn blank-line-separated blocks into
+// paragraphs and handle the basic inline formatting the editor produces.
+function markdownToHtml(markdown: string) {
+  return markdown
+    .split(/\n\s*\n/)
+    .map((block) => block.trim())
+    .filter(Boolean)
+    .map((block) => {
+      const inline = block
+        .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
+        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+        .replace(/\n/g, "<br />")
+      return `<p>${inline}</p>`
+    })
+    .join("")
+}
+
 export const dynamic = "force-static"
 
 export default function Home() {
@@ -20,7 +38,7 @@ export default function Home() {
 
       {/* Bio content */}
       <div className="content-card bio-content">
-        <div dangerouslySetInnerHTML={{ __html: bio }} />
+        <div dangerouslySetInnerHTML={{ __html: markdownToHtml(bio) }} />
       </div>
 
       {/* Main image */}
